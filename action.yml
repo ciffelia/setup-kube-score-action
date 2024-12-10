@@ -1,0 +1,13 @@
+name: "setup-kube-score"
+description: "Set up a specific version of kube-score and add it to the PATH."
+
+inputs:
+  kube-score-version:
+    description: "The exact version of kube-score to use."
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - run: "${{ github.action_path }}/setup-kube-score.sh"
+      shell: "bash"
